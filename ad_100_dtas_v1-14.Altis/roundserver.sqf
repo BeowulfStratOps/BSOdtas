@@ -30,11 +30,11 @@ publicVariable "adminPaused";
 
 _deleteTypes = ["GroundWeaponHolder", "WeaponHolderSimulated", "ACE_Explosive_Object", "ACE_M86PDM_Object", "ACE_BreachObject", "Default"];
 
-_jeepType =  "B_MRAP_01_F";
+_jeepType =  "B_G_Offroad_01_F";//"B_MRAP_01_F";
 _jeepCrewCount = 4;
 if (attackerFaction == 1 || attackerFaction == 2) then 
 {
-	_jeepType = "rhsusf_m1025_d";
+	_jeepType = "B_G_Offroad_01_F";
 };
 if (attackerFaction == 0) then
 {
@@ -430,7 +430,7 @@ while {true} do
 					// Boat
 					case 1:
 					{
-						_vehType = "B_Boat_Transport_01_F";
+						_vehType = "I_C_Boat_Transport_02_F";
 						_slotCount = 5;
 					};
 					// Submarine
@@ -442,7 +442,7 @@ while {true} do
 					// Littlebird
 					case 3:
 					{
-						_vehType = "B_Heli_Light_01_F";
+						_vehType = "RHS_MELB_MH6M";
 						_slotCount = 6;
 					};
 				};
