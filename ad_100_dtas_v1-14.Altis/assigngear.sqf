@@ -31,6 +31,8 @@ isMedic = false;
 
 sleep .1;
 
+["ace_medical_treatment_fullHealLocal", [player]] call CBA_fnc_localEvent;
+
 player addWeapon "ItemMap";
 player addWeapon "ItemCompass";
 player addWeapon "ItemWatch";
