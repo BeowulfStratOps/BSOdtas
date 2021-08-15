@@ -236,9 +236,9 @@ if (attackerFaction == 1 || attackerFaction == 2) then
 	
 	_attackerAttachments = ["rhsusf_acc_t1_high","rhsusf_acc_anpeq15_wmx","rhsusf_acc_grip2_tan"];//["rhsusf_acc_eotech_552", "rhsusf_acc_anpeq15"];
 	
-	_attackerMarksmanPrimary = "rhs_weap_m4a1_grip";
+	_attackerMarksmanPrimary = "rhs_weap_mk18_d";
 	_attackerMarksmanScope = "rhsusf_acc_su230_c";
-	_attackerMarksmanAttachments = [if (nightVision > 0) then {_attackerMarksmanNVScope} else {_attackerMarksmanScope}, "rhsusf_acc_anpeq15"];
+	_attackerMarksmanAttachments = [if (nightVision > 0) then {_attackerMarksmanNVScope} else {_attackerMarksmanScope}, "rhsusf_acc_anpeq15","rhsusf_acc_harris_bipod"];
 	
 	_attackerLMG = "rhs_weap_m249_light_S";
 	_attackerLMGMagazines = ["rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote", 3];
