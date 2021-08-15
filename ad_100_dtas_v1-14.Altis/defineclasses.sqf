@@ -1,11 +1,13 @@
 #include "islandspecific.hpp"
 
-private ["_attackerPrimary", "_attackerMagazine", "_attackerGrenade", "_attackerSmoke", "_attackerColorSmoke", "_attackerAttachments", "_attackerHelm", "_attackerUniform", "_attackerVest", "_attackerBackpack", "_attackerGlobalBackpack", "_attackerGlasses", "_defenderPrimary", "_defenderMagazine", "_defenderGrenade", "_defenderSmoke", "_defenderColorSmoke", "_defenderAttachments", "_defenderSpecOpsAttachments", "_defenderMGAttachments", "_defenderMarksmanSight", "_defenderMarksmanNVSight", "_defenderMarksmanAttachments", "_defenderUniform", "_defenderHelm", "_attackerHandgun", "_attackerHandgunMagazine", "_attackerHandgunSuppressor", "_attackerMarksmanPrimary", "_attackerMarksmanScope", "_attackerMarksmanNVScope", "_attackerMarksmanAttachments", "_defenderBackpack", "_defenderWeakPrimary", "_defenderWeakMagazine", "_defenderGL", "_defenderGLMagazines", "_defenderMG", "_defenderMGMagazines", "_defenderVest", "_defenderSmallVest", "_attackerGL", "_attackerGLMagazines", "_attackerLMG", "_attackerLMGMagazines", "_attackerMG", "_attackerMGMagazines", "_attackerSR", "_attackerSRMagazine", "_attackerSRScope", "_attackerSRNVScope", "_attackerSniperUniform", "_attackerSniperHat", "_attackerGLVest", "_attackerMedicVest", "_attackerMGVest", "_attackerSuppressor", "_attackerHat", "_attackerHLauncher", "_attackerSMG", "_attackerSMGAttachments", "_attackerSMGMagazine", "_defenderSMG", "_defenderSMGAttachments", "_defenderSMGMagazine", "_defenderGlasses", "_attackerMGAttachments", "_attackerLMGAttachments", "_attackerLauncher", "_attackerAPRocket", "_attackerHATRocket", "_defenderLauncher", "_defenderATRocket", "_defenderAPRocket", "_defenderATRocket", "_defenderAPRocket", "_attackerLauncherAttachments", "_defenderLauncherAttachments","_defenderMarksmanPrimary"];
+private ["_attackerPrimary", "_attackerMagazine", "_attackerGrenade", "_attackerSmoke", "_attackerColorSmoke", "_attackerAttachments", "_attackerHelm", "_attackerUniform", "_attackerVest", "_attackerBackpack", "_attackerGlobalBackpack", "_attackerGlasses", "_defenderPrimary", "_defenderMagazine", "_defenderGrenade", "_defenderSmoke", "_defenderColorSmoke", "_defenderAttachments", "_defenderSpecOpsAttachments", "_defenderMGAttachments", "_defenderMarksmanSight","_defenderMarksmanMagazine", "_defenderMarksmanNVSight", "_defenderMarksmanAttachments", "_defenderUniform", "_defenderHelm", "_defenderHandgun", "_defenderHandgunMagazine","_attackerHandgun", "_attackerHandgunMagazine", "_attackerHandgunSuppressor", "_attackerMarksmanPrimary", "_attackerMarksmanScope", "_attackerMarksmanNVScope", "_attackerMarksmanAttachments", "_defenderBackpack", "_defenderWeakPrimary", "_defenderWeakMagazine", "_defenderGL", "_defenderGLMagazines", "_defenderMG", "_defenderMGMagazines", "_defenderVest", "_defenderSmallVest", "_attackerGL", "_attackerGLMagazines", "_attackerLMG", "_attackerLMGMagazines", "_attackerMG", "_attackerMGMagazines", "_attackerSR", "_attackerSRMagazine", "_attackerSRScope", "_attackerSRNVScope", "_attackerSniperUniform", "_attackerSniperHat", "_attackerGLVest", "_attackerMedicVest", "_attackerMGVest", "_attackerSuppressor", "_attackerHat", "_attackerHLauncher", "_attackerSMG", "_attackerSMGAttachments", "_attackerSMGMagazine", "_defenderSMG", "_defenderSMGAttachments", "_defenderSMGMagazine", "_defenderGlasses", "_attackerMGAttachments", "_attackerLMGAttachments", "_attackerLauncher", "_attackerAPRocket", "_attackerHATRocket", "_defenderLauncher", "_defenderATRocket", "_defenderAPRocket", "_defenderATRocket", "_defenderAPRocket", "_attackerLauncherAttachments", "_defenderLauncherAttachments","_defenderMarksmanPrimary"];
 
 // Default equipment, overridden below by mods where needed.
 
 defenderNVG = "NVGoggles_OPFOR";
 attackerNVG = "NVGoggles_OPFOR";
+
+_ACEMedicalSet = [["ACE_fieldDressing",6],["ACE_morphine",2],["ACE_personalAidKit",1]];
 
 _attackerPrimary = "arifle_MX_F";
 _attackerMagazine = "30Rnd_65x39_caseless_mag";
@@ -64,7 +66,7 @@ _attackerHATRocket = "Titan_AP";
 _attackerHelm = "H_HelmetB";
 _attackerUniform = "U_B_CombatUniform_mcam";
 _attackerVest = "V_PlateCarrier3_rgr";
-_attackerBackpack = "B_AssaultPack_mcamo";
+_attackerBackpack = "B_AssaultPack_cbr";
 _attackerGlobalBackpack = "";
 _attackerGlasses = "";
 
@@ -79,6 +81,9 @@ _defenderColorSmoke = "SmokeShellBlue";
 _defenderWeakPrimary = "arifle_Mk20C_F";
 _defenderWeakMagazine = "30Rnd_556x45_Stanag";
 
+_defenderHandgun = "hgun_Rook40_F";
+_defenderHandgunMagazine = "16Rnd_9x21_Mag";
+
 _defenderGL = "arifle_Mk20_GL_F";
 _defenderGLMagazines = [["1Rnd_HE_Grenade_shell", 4 + 2 * defenderGearQuality], ["1Rnd_SmokeBlue_Grenade_shell", 3]];
 if ((nightVision >= 0) && (nightVision < 2)) then
@@ -90,7 +95,7 @@ _defenderMGMagazines = ["100Rnd_65x39_caseless_mag", 3 + defenderGearQuality];
 
 _defenderVest = "V_TacVest_blk";//"V_BandollierB_blk";
 _defenderSmallVest = _defenderVest;
-_defenderBackpack = "B_FieldPack_Cbr";
+_defenderBackpack = "UK3CB_CHC_C_B_HIKER";
 _defenderAttachments = if (nightVision >= 0) then {["acc_flashlight"]} else {[]};
 
 _defenderSpecOpsPrimary = _defenderPrimary;
@@ -191,7 +196,7 @@ if (attackerFaction == 1 || attackerFaction == 2) then
 	_attackerUniform = "rhs_uniform_g3_m81";//"rhs_uniform_cu_ocp";
 	_attackerHelm = "rhsusf_ach_bare_semi_headset_ess";//"rhsusf_ach_helmet_headset_ocp";
 	_attackerVest = "rhsusf_mbav_rifleman";//"rhsusf_iotv_ocp_Rifleman";
-	_attackerBackpack = "B_AssaultPack_khk";//"rhsusf_assault_eagleaiii_ocp";
+	_attackerBackpack = "B_AssaultPack_cbr";//"rhsusf_assault_eagleaiii_ocp";
 	_attackerGlobalBackpack = _attackerBackpack;
 	_attackerHat = "H_Cap_headphones";//"rhs_Booniehat_ocp";
 	
@@ -251,7 +256,7 @@ if (attackerFaction == 1 || attackerFaction == 2) then
 	_attackerSuppressor = "rhsusf_acc_nt4_tan";
 	
 	_attackerSMG = "rhsusf_weap_MP7A2_desert";
-	_attackerSMGAttachments = ["rhsusf_acc_t1_high", "rhsusf_acc_anpeq16a"];
+	_attackerSMGAttachments = ["rhsusf_acc_t1_high", "rhsusf_acc_anpeq16a","rhsusf_acc_rotex_mp7_desert"];
 	_attackerSMGMagazine = "rhsusf_mag_40Rnd_46x30_FMJ";
 	
 	
@@ -346,6 +351,8 @@ if (defenderFaction == 0 || defenderFaction == 2) then
 	_defenderWeakPrimary = "rhs_weap_aks74u";
 	_defenderMagazine = "rhs_30Rnd_545x39_7N6M_AK";
 	_defenderWeakMagazine = _defenderMagazine;
+	_defenderHandgun = "rhs_weap_tt33";
+	_defenderHandgunMagazine = "rhs_mag_762x25_8";
 	_defenderGrenade = "rhs_mag_rgd5";
 	_defenderSmoke = "rhs_mag_rdg2_white";
 	_defenderColorSmoke = _defenderSmoke;
@@ -376,9 +383,10 @@ if (defenderFaction == 0 || defenderFaction == 2) then
 		_defenderSpecOpsAttachments = _defenderSpecOpsAttachments + ["rhs_acc_pbs1"];
 	};
 	
-	_defenderMarksmanPrimary = _defenderSpecOpsPrimary;
-	_defenderMarksmanSight = "rhs_acc_1p29";
-	_defenderMarksmanNVSight = "rhs_acc_1pn93_1";
+	_defenderMarksmanPrimary = "hlc_rifle_FN3011_WDL";
+	_defenderMarksmanSight = "hlc_optic_zf95_3011";
+	_defenderMarksmanNVSight = "hlc_optic_fnstanag4x";
+	_defenderMarksmanMagazine = "sp_fwa_10Rnd_762_FAL_Metric_Tracer";
 	_defenderMarksmanAttachments = _defenderAttachments + [_defenderMarksmanSight];
 	if (nightVision > 0) then
 	{
@@ -414,12 +422,12 @@ aClasses =
 		localize "STR_Marksman"
 		,_attackerUniform
 		,_attackerVest
-		,if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack//if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerMarksmanPrimary, _attackerHandgun]
 		,[[_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_DefusalKit",1],[_attackerMarksmanScope, if (_attackerMarksmanScope in _attackerMarksmanAttachments) then {0} else {1}]]
+		,_ACEMedicalSet + [["ACE_DefusalKit",1],[_attackerMarksmanScope, if (_attackerMarksmanScope in _attackerMarksmanAttachments) then {0} else {1}]]
 		,_attackerMarksmanAttachments
 		,[]
 		,[]
@@ -431,12 +439,12 @@ aClasses =
 		localize "STR_Rifleman"
 		,_attackerUniform
 		,_attackerVest
-		,if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack//if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerHandgun]
 		,[[_attackerMagazine, 9], [_attackerGrenade, 3], [_attackerSmoke, 2], [_attackerColorSmoke, 1], [_attackerHandgunMagazine, 4]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_DefusalKit",1]]
+		,_ACEMedicalSet + [["ACE_DefusalKit",1]]
 		,_attackerAttachments
 		,[]
 		,[_attackerHandgunSuppressor]
@@ -448,12 +456,12 @@ aClasses =
 		localize "STR_SuppressedRifleman"
 		,_attackerUniform
 		,_attackerVest
-		,if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerHandgun]
 		,[[_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 1], [_attackerColorSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_DefusalKit",1]]
+		,_ACEMedicalSet + [["ACE_DefusalKit",1]]
 		,_attackerAttachments + [_attackerSuppressor]
 		,[]
 		,[]
@@ -465,12 +473,12 @@ aClasses =
 		localize "STR_SuppressedSMG"
 		,_attackerUniform
 		,_attackerVest
-		,if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerSMG, _attackerHandgun]
 		,[[_attackerSMGMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 1], [_attackerColorSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_DefusalKit",1]]
+		,_ACEMedicalSet + [["ACE_DefusalKit",1]]
 		,_attackerSMGAttachments
 		,[]
 		,[]
@@ -482,12 +490,12 @@ aClasses =
 		localize "STR_Medic"
 		,_attackerUniform
 		,_attackerMedicVest
-		,if (attackerFaction == 0 || attackerFaction == 3) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack//if (attackerFaction == 0 || attackerFaction == 3) then {_attackerGlobalBackpack} else {""}
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerHandgun]
 		,[[_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 1], [_attackerColorSmoke, 2], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 10],["ACE_personalAidKit", 10]]
+		,_ACEMedicalSet + [["ACE_fieldDressing",10],["ACE_morphine",6],["ACE_personalAidKit",8]]
 		,_attackerAttachments
 		,[]
 		,[]
@@ -499,12 +507,12 @@ aClasses =
 		localize "STR_Grenadier"
 		,_attackerUniform
 		,_attackerGLVest
-		,if ((attackerFaction == 0) || ((attackerFaction == 3) && (nightVision == 0))) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack//if ((attackerFaction == 0) || ((attackerFaction == 3) && (nightVision == 0))) then {_attackerGlobalBackpack} else {""}
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerGL, _attackerHandgun]
 		,[[_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 1]] + _attackerGLMagazines
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_DefusalKit",1]]
+		,_ACEMedicalSet + [["ACE_DefusalKit",1]]
 		,if (attackerFaction == 0) then {["IDF_optic_Mars"]} else {_attackerAttachments}
 		,[]
 		,[]
@@ -516,12 +524,12 @@ aClasses =
 		localize "STR_AutomaticRifleman"
 		,_attackerUniform
 		,_attackerMGVest
-		,if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack//if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerLMG, _attackerHandgun]
 		,[_attackerLMGMagazines, [_attackerGrenade, 1], [_attackerSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet + [["ACE_personalAidKit", 1]]
 		,_attackerLMGAttachments
 		,[]
 		,[]
@@ -533,12 +541,12 @@ aClasses =
 		localize "STR_Machinegunner"
 		,_attackerUniform
 		,_attackerMGVest
-		,if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
+		,_attackerBackpack//if (attackerFaction == 0) then {_attackerGlobalBackpack} else {""}
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerMG, _attackerHandgun]
 		,[_attackerMGMagazines, [_attackerGrenade, 0], [_attackerSmoke, 0], [_attackerHandgunMagazine, 2]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_attackerMGAttachments
 		,[]
 		,[]
@@ -550,12 +558,12 @@ aClasses =
 		localize "STR_RPG_HE"
 		,_attackerUniform
 		,_attackerVest
-		,""
+		,_attackerBackpack
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerLauncher, _attackerHandgun]
 		,[[_attackerAPRocket, 1], [_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_attackerAttachments
 		,_attackerLauncherAttachments
 		,[]
@@ -567,12 +575,12 @@ aClasses =
 		localize "STR_AssistantRPG"
 		,_attackerUniform
 		,_attackerVest
-		,if (attackerFaction < 4) then {"rhs_rpg_empty"} else {_attackerBackpack}
+		,_attackerBackpack
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerHandgun]
 		,[[_attackerAPRocket, 3], [_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 2], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_attackerAttachments
 		,[]
 		,[]
@@ -584,12 +592,12 @@ aClasses =
 		localize "STR_Titan_HE"
 		,_attackerUniform
 		,_attackerVest
-		,""
+		,_attackerBackpack
 		,_attackerHelm
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerHandgun, _attackerHLauncher]
 		,[[_attackerHATRocket, 1], [_attackerMagazine, 7], [_attackerSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_attackerAttachments
 		,[]
 		,[]
@@ -606,7 +614,7 @@ aClasses =
 		,_attackerGlasses
 		,[_attackerPrimary, _attackerHandgun]
 		,[[_attackerHATRocket, 2], [_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 2], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_attackerAttachments
 		,[]
 		,[]
@@ -618,12 +626,12 @@ aClasses =
 		localize "STR_Sniper"
 		,_attackerSniperUniform
 		,"V_Chestrig_rgr"
-		,""
+		,_attackerBackpack
 		,_attackerSniperHat
 		,""
 		,[_attackerSR, _attackerHandgun]
 		,[[_attackerSRMagazine, 11], [_attackerSmoke, 1], [_attackerColorSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_RangeCard",1],["ACE_Kestrel4500",1],[_attackerSRScope, if (nightVision > 0 && _attackerSRNVScope != _attackerSRScope) then {1} else {0}]]
+		,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1],[_attackerSRScope, if (nightVision > 0 && _attackerSRNVScope != _attackerSRScope) then {1} else {0}]]
 		,if (nightVision > 0) then {[_attackerSRNVScope]} else {[_attackerSRScope]}
 		,[]
 		,[]
@@ -635,12 +643,12 @@ aClasses =
 		localize "STR_Spotter"
 		,_attackerSniperUniform
 		,"V_Chestrig_rgr"
-		,""
+		,_attackerBackpack
 		,_attackerSniperHat
 		,""
 		,[_attackerPrimary, "Rangefinder", _attackerHandgun]
 		,[[_attackerMagazine, 7], [_attackerGrenade, 1], [_attackerSmoke, 3], [_attackerColorSmoke, 1], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_RangeCard",1],["ACE_Kestrel4500",1]]
+		,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1]]
 		,_attackerAttachments
 		,[]
 		,[_attackerHandgunSuppressor]
@@ -657,7 +665,7 @@ aClasses =
 		,""
 		,[_attackerPrimary, if (sidePlayer == WEST) then {"B_UavTerminal"} else {"O_UavTerminal"}, _attackerHandgun]
 		,[[_attackerMagazine, 7], [_attackerHandgunMagazine, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_attackerAttachments
 		,[]
 		,[]
@@ -669,12 +677,12 @@ aClasses =
 		localize "STR_Diver"
 		,"U_B_Wetsuit"
 		,"V_RebreatherB"
-		,""
+		,_attackerBackpack
 		,""
 		,"G_Diving"
 		,["arifle_SDAR_F", _attackerHandgun]
 		,[["30Rnd_556x45_Stanag", 5], ["20Rnd_556x45_UW_mag", 2], [_attackerGrenade, 2], [_attackerSmoke, 1], [_attackerHandgunMagazine, 2]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,[]
 		,[]
 		,[_attackerHandgunSuppressor]
@@ -705,12 +713,12 @@ dClasses =
 		localize "STR_SpecOps"
 		,_defenderUniform
 		,"V_TacVest_blk"
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderSpecOpsPrimary]
 		,[[_defenderMagazine, 6 + defenderGearQuality], [_defenderGrenade, 1], [_defenderSmoke, 2]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderSpecOpsAttachments
 		,[]
 		,[]
@@ -722,12 +730,12 @@ dClasses =
 		localize "STR_Rifleman"
 		,_defenderUniform
 		,"V_Chestrig_blk"
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderPrimary]
 		,[[_defenderMagazine, 7 + 2 * defenderGearQuality], [_defenderGrenade, 3], [_defenderSmoke, 3]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderAttachments
 		,[]
 		,[]
@@ -739,12 +747,12 @@ dClasses =
 		localize "STR_SpecOpsSMG"
 		,_defenderUniform
 		,"V_TacVest_blk"
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderSMG]
 		,[[_defenderSMGMagazine, 6 + defenderGearQuality], [_defenderGrenade, 1], [_defenderSmoke, 2]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderSMGAttachments
 		,[]
 		,[]
@@ -756,12 +764,12 @@ dClasses =
 		localize "STR_Medic"
 		,_defenderUniform
 		,if (defenderFaction == 1) then {"V_Chestrig_blk"} else {_defenderVest}
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderWeakPrimary]
 		,[[_defenderWeakMagazine, 6 + defenderGearQuality], [_defenderGrenade, 1 + defenderGearQuality], [_defenderSmoke, 1 + defenderGearQuality], [_defenderColorSmoke, 1]]
-		,[["FirstAidKit", 5 + 5 * defenderGearQuality],["ACE_personalAidKit", 5 + 5 * defenderGearQuality]]
+		,_ACEMedicalSet + [["ACE_fieldDressing",10],["ACE_morphine",6],["ACE_personalAidKit",8]]
 		,_defenderAttachments
 		,[]
 		,[]
@@ -773,12 +781,12 @@ dClasses =
 		localize "STR_AutomaticRifleman"
 		,_defenderUniform
 		,if (defenderFaction == 1) then {"V_Chestrig_blk"} else {_defenderVest}
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderMG]
 		,[_defenderMGMagazines, [_defenderGrenade, if (defenderFaction < 3) then {1} else {0}], [_defenderSmoke, defenderGearQuality + (if (defenderFaction < 3) then {1} else {0})]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderMGAttachments
 		,[]
 		,[]
@@ -790,12 +798,12 @@ dClasses =
 		localize "STR_Grenadier"
 		,_defenderUniform
 		,_defenderVest
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderGL]
 		,[[_defenderWeakMagazine, 6 + defenderGearQuality], [_defenderSmoke, defenderGearQuality]] + _defenderGLMagazines
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderAttachments
 		,[]
 		,[]
@@ -807,12 +815,12 @@ dClasses =
 		localize "STR_RPG"
 		,_defenderUniform
 		,_defenderSmallVest
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderWeakPrimary, _defenderLauncher]
 		,[[_defenderATRocket, 1], [_defenderWeakMagazine, 6 + defenderGearQuality], [_defenderSmoke, 1 + defenderGearQuality]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderAttachments
 		,_defenderLauncherAttachments
 		,[]
@@ -824,12 +832,12 @@ dClasses =
 		localize "STR_RPG_HE"
 		,_defenderUniform
 		,_defenderSmallVest
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderWeakPrimary, _defenderLauncher]
 		,[[_defenderAPRocket, 1], [_defenderWeakMagazine, 6 + defenderGearQuality], [_defenderSmoke, 1 + defenderGearQuality]]
-		,[]
+		,_ACEMedicalSet
 		,_defenderAttachments
 		,_defenderLauncherAttachments
 		,[]
@@ -841,12 +849,12 @@ dClasses =
 		localize "STR_AssistantRPG"
 		,_defenderUniform
 		,_defenderSmallVest
-		,if (attackerFaction < 4) then {"rhs_rpg_empty"} else {_defenderBackpack}
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderPrimary]
 		,[[_defenderATRocket, 1], [_defenderAPRocket, 2 + defenderGearQuality], [_defenderMagazine, 6 + defenderGearQuality], [_defenderGrenade, 1], [_defenderSmoke, 1 + defenderGearQuality]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+		,_ACEMedicalSet
 		,_defenderAttachments
 		,[]
 		,[]
@@ -858,12 +866,12 @@ dClasses =
 		localize "STR_Saboteur"
 		,_defenderUniform
 		,_defenderVest
-		,""
+		,_defenderBackpack
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderWeakPrimary]
 		,[[_defenderWeakMagazine, 6 + defenderGearQuality], ["APERSTripMine_Wire_Mag", 1 + defenderGearQuality], ["ClaymoreDirectionalMine_Remote_Mag", 1],  [_defenderSmoke, 1]]
-		,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_Clacker",1],["ACE_DefusalKit",1]]
+		,_ACEMedicalSet + [["ACE_Clacker",1],["ACE_DefusalKit",1]]
 		,_defenderAttachments
 		,[]
 		,[]
@@ -871,22 +879,41 @@ dClasses =
 		,"true"
 	]
 	
+	,[
+		localize "STR_Marksman"
+		,_defenderUniform
+		,_defenderSmallVest
+		,_defenderBackpack
+		, _defenderHelm
+		,_defenderGlasses
+		,[_defenderMarksmanPrimary, _defenderHandgun]
+		,[[_defenderMarksmanMagazine, 6], [_defenderHandgunMagazine,4], [_defenderSmoke, 2]]
+		,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1],[_defenderMarksmanSight, if (_defenderMarksmanSight in _defenderMarksmanAttachments) then {0} else {1}]]
+		,_defenderMarksmanAttachments
+		,[]
+		,[]
+		,{}
+		,"true"
+	]	
+	
+	
 ];
 
 if (defenderGearQuality > 0) then
 {
+
 	dClasses =
-		[
+/*		[
 			[
 				localize "STR_Marksman"
 				,_defenderUniform
 				,_defenderSmallVest
-				,""
+				,_defenderBackpack
 				, _defenderHelm
 				,_defenderGlasses
-				,[_defenderMarksmanPrimary]
-				,[[_defenderWeakMagazine, 5], [_defenderSmoke, 2]]
-				,[["FirstAidKit", 2],["ACE_personalAidKit", 1],["ACE_RangeCard",1],["ACE_Kestrel4500",1],[_defenderMarksmanSight, if (_defenderMarksmanSight in _defenderMarksmanAttachments) then {0} else {1}]]
+				,[_defenderMarksmanPrimary, _defenderHandgun]
+				,[[_defenderMarksmanMagazine, 6], [_defenderHandgunMagazine,4], [_defenderSmoke, 2]]
+				,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1],[_defenderMarksmanSight, if (_defenderMarksmanSight in _defenderMarksmanAttachments) then {0} else {1}]]
 				,_defenderMarksmanAttachments
 				,[]
 				,[]
@@ -895,19 +922,20 @@ if (defenderGearQuality > 0) then
 			]
 		]
 		+
+	
 		dClasses
-		+
+		+*/
 		[
 			[
 				localize "STR_MortarGunner"
 				,_defenderUniform
 				,_defenderSmallVest
-				,"O_Mortar_01_weapon_F"
+				,_defenderBackpack
 				,_defenderHelm
 				,_defenderGlasses
-				,[_defenderWeakPrimary]
-				,[[_defenderWeakMagazine, 6], [_defenderSmoke, 1]]
-				,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+				,[_defenderWeakPrimary,"UK3CB_BAF_M6"]
+				,[[_defenderWeakMagazine, 6], [_defenderSmoke, 1],["UK3CB_BAF_1Rnd_60mm_Mo_Shells",2],["UK3CB_BAF_1Rnd_60mm_Mo_WPSmoke_White",1]]
+				,_ACEMedicalSet
 				,[]
 				,[]
 				,[]
@@ -919,12 +947,12 @@ if (defenderGearQuality > 0) then
 				localize "STR_MortarAssistant"
 				,_defenderUniform
 				,_defenderSmallVest
-				,"O_Mortar_01_support_F"
+				,_defenderBackpack
 				,_defenderHelm
 				,_defenderGlasses
 				,[_defenderWeakPrimary, "Rangefinder"]
-				,[[_defenderWeakMagazine, 6], [_defenderSmoke, 1], [_defenderColorSmoke, 1]]
-				,[["FirstAidKit", 2],["ACE_personalAidKit", 1]]
+				,[[_defenderWeakMagazine, 6], [_defenderSmoke, 1], [_defenderColorSmoke, 1],["UK3CB_BAF_1Rnd_60mm_Mo_Shells",4],["UK3CB_BAF_1Rnd_60mm_Mo_WPSmoke_White",2]]
+				,_ACEMedicalSet
 				,[]
 				,[]
 				,[]
