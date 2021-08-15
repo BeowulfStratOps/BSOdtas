@@ -4,6 +4,8 @@ disabledAI = 1;
 respawn = 3;
 respawndelay = 1;
 
+enableDebugConsole = 1;
+
 class Header
 {
 	gameType = Seize;
