@@ -428,6 +428,10 @@
 			<English>Diver</English>
 			<Russian>Водила</Russian>
 		</Key>
+		<Key ID="STR_Para">
+			<English>Paratrooper</English>
+			<Russian>VDV</Russian>
+		</Key>
 		<Key ID="STR_SpecOps">
 			<English>SpecOps</English>
 			<Russian>руусская ненджя</Russian>

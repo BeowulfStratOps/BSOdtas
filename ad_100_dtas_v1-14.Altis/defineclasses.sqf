@@ -698,6 +698,23 @@ aClasses =
 		,"true"
 	]
 
+	,[
+		localize "STR_Para"
+		,_attackerUniform
+		,_attackerVest
+		,"B_Parachute"
+		,_attackerHelm
+		,_attackerGlasses
+		,[_attackerPrimary]
+		,[[_attackerMagazine, 7], [_attackerGrenade, 2], [_attackerSmoke, 1], [_attackerColorSmoke, 1]]
+		,_ACEMedicalSet + [["ACE_DefusalKit",1]]
+		,_attackerAttachments
+		,[]
+		,[_attackerHandgunSuppressor]
+		,{}
+		,"true"
+	]
+
 ];
 
 dClasses =
