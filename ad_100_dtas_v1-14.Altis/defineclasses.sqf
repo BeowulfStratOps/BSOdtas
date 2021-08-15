@@ -1,6 +1,6 @@
 #include "islandspecific.hpp"
 
-private ["_attackerPrimary", "_attackerMagazine", "_attackerGrenade", "_attackerSmoke", "_attackerColorSmoke", "_attackerAttachments", "_attackerHelm", "_attackerUniform", "_attackerVest", "_attackerBackpack", "_attackerGlobalBackpack", "_attackerGlasses", "_defenderPrimary", "_defenderMagazine", "_defenderGrenade", "_defenderSmoke", "_defenderColorSmoke", "_defenderAttachments", "_defenderSpecOpsAttachments", "_defenderMGAttachments", "_defenderMarksmanSight","_defenderMarksmanMagazine", "_defenderMarksmanNVSight", "_defenderMarksmanAttachments", "_defenderUniform", "_defenderHelm", "_defenderHandgun", "_defenderHandgunMagazine","_attackerHandgun", "_attackerHandgunMagazine", "_attackerHandgunSuppressor", "_attackerMarksmanPrimary", "_attackerMarksmanScope", "_attackerMarksmanNVScope", "_attackerMarksmanAttachments", "_defenderBackpack", "_defenderWeakPrimary", "_defenderWeakMagazine", "_defenderGL", "_defenderGLMagazines", "_defenderMG", "_defenderMGMagazines", "_defenderVest", "_defenderSmallVest", "_attackerGL", "_attackerGLMagazines", "_attackerLMG", "_attackerLMGMagazines", "_attackerMG", "_attackerMGMagazines", "_attackerSR", "_attackerSRMagazine", "_attackerSRScope", "_attackerSRNVScope", "_attackerSniperUniform", "_attackerSniperHat", "_attackerGLVest", "_attackerMedicVest", "_attackerMGVest", "_attackerSuppressor", "_attackerHat", "_attackerHLauncher", "_attackerSMG", "_attackerSMGAttachments", "_attackerSMGMagazine", "_defenderSMG", "_defenderSMGAttachments", "_defenderSMGMagazine", "_defenderGlasses", "_attackerMGAttachments", "_attackerLMGAttachments", "_attackerLauncher", "_attackerAPRocket", "_attackerHATRocket", "_defenderLauncher", "_defenderATRocket", "_defenderAPRocket", "_defenderATRocket", "_defenderAPRocket", "_attackerLauncherAttachments", "_defenderLauncherAttachments","_defenderMarksmanPrimary"];
+private ["_attackerPrimary", "_attackerMagazine", "_attackerGrenade", "_attackerSmoke", "_attackerColorSmoke", "_attackerAttachments", "_attackerHelm", "_attackerUniform", "_attackerVest", "_attackerBackpack", "_attackerGlobalBackpack", "_attackerGlasses", "_defenderPrimary", "_defenderMagazine", "_defenderGrenade", "_defenderSmoke", "_defenderColorSmoke", "_defenderAttachments", "_defenderSpecOpsAttachments", "_defenderMGAttachments", "_defenderMarksmanSight","_defenderMarksmanMagazine", "_defenderMarksmanNVSight", "_defenderMarksmanAttachments", "_defenderUniform", "_defenderHelm", "_defenderHandgun", "_defenderHandgunMagazine","_attackerHandgun", "_attackerHandgunMagazine", "_attackerHandgunSuppressor", "_attackerMarksmanPrimary", "_attackerMarksmanScope", "_attackerMarksmanNVScope", "_attackerMarksmanAttachments", "_defenderBackpack", "_defenderWeakPrimary", "_defenderWeakMagazine", "_defenderGL", "_defenderGLMagazines", "_defenderMG", "_defenderMGMagazines", "_defenderVest", "_defenderSmallVest", "_attackerGL", "_attackerGLMagazines", "_attackerLMG", "_attackerLMGMagazines", "_attackerMG", "_attackerMGMagazines", "_attackerSR", "_attackerSRMagazine", "_attackerSRScope", "_attackerSRNVScope", "_attackerSniperUniform", "_attackerSniperHat", "_attackerGLVest", "_attackerMedicVest", "_attackerMGVest", "_attackerSuppressor", "_attackerHat", "_attackerHLauncher", "_attackerSMG", "_attackerSMGAttachments", "_attackerSMGMagazine", "_defenderSMG", "_defenderSMGAttachments", "_defenderSMGMagazine", "_defenderGlasses", "_attackerMGAttachments", "_attackerLMGAttachments", "_attackerLauncher", "_attackerAPRocket", "_attackerHATRocket", "_defenderLauncher", "_defenderATRocket", "_defenderAPRocket", "_defenderATRocket", "_defenderAPRocket", "_attackerLauncherAttachments", "_defenderLauncherAttachments","_defenderMarksmanPrimary","_defenderSpecOpsMagazines"];
 
 // Default equipment, overridden below by mods where needed.
 
@@ -352,8 +352,8 @@ if (defenderFaction == 0 || defenderFaction == 2) then
 	_defenderWeakPrimary = "rhs_weap_aks74u";
 	_defenderMagazine = "rhs_30Rnd_545x39_7N6M_AK";
 	_defenderWeakMagazine = _defenderMagazine;
-	_defenderHandgun = "rhs_weap_tt33";
-	_defenderHandgunMagazine = "rhs_mag_762x25_8";
+	_defenderHandgun = "sp_fwa_l9a1_hipower_wood";
+	_defenderHandgunMagazine = "sp_fwa_13Rnd_9mm_HiPower";
 	_defenderGrenade = "rhs_mag_rgd5";
 	_defenderSmoke = "rhs_mag_rdg2_white";
 	_defenderColorSmoke = _defenderSmoke;
@@ -725,7 +725,7 @@ dClasses =
 		,_defenderHelm
 		,_defenderGlasses
 		,[_defenderSpecOpsPrimary]
-		,[[_defenderMagazine, 6 + defenderGearQuality], [_defenderGrenade, 1], [_defenderSmoke, 2]]
+		,[[_defenderSpecOpsMagazines, 6 + defenderGearQuality], [_defenderGrenade, 1], [_defenderSmoke, 2]]
 		,_ACEMedicalSet
 		,_defenderSpecOpsAttachments
 		,[]
