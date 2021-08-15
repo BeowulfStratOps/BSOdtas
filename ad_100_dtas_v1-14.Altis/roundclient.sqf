@@ -294,85 +294,11 @@ restrictionCheckingEnabled = true;
 				player setPos [_xPos, _yPos];
 				player setVelocity [0, 0, 0];
 			};
-			
-			if (isTFR && canHaveRadio) then
-			{
-				if ([] call TFAR_fnc_haveSWRadio) then
-				{
-					player unlinkItem ([] call TFAR_fnc_activeSwRadio);
-				};
-			};
 		};
 		
 		if (player getVariable "groupKicked") then
 		{
 			[] call fnc_groupLeave;
-		};
-		
-		if (alive player && isPlaying && !bKeepPlayerInBox) then
-		{
-			if ((secondaryWeapon player != "") && (backpack player != "")) then
-			{
-				removeBackpack player;
-				[] spawn {hintC (localize "STR_CannotCarryBackpackAndLauncher");};
-			};
-			
-			if
-			(
-				player hasWeapon "LMG_Zafir_F"
-				||
-				player hasWeapon "arifle_MX_SW_Black_F"
-				||
-				player hasWeapon "hlc_rifle_rpk"
-				||
-				player hasWeapon "rhs_weap_m240B_CAP"
-				||
-				player hasWeapon "rhs_weap_pkp"
-			) then
-			{
-				_sight = (primaryWeaponItems player) select 2;
-				if (_sight != "") then
-				{
-					player removePrimaryWeaponItem _sight;
-					player addItem _sight;
-					[] spawn {hintC (localize "STR_CannotAttachSightsToMG");};
-				};
-			};
-			
-			if (((vehicle player) != player) && (sidePlayer != attackerSide)) then
-			{
-				if ([typeOf (vehicle player), true] call BIS_fnc_crewCount > 1) then
-				{
-					player action ["GetOut", vehicle player];
-					[] spawn {hintC (localize "STR_VehicleIsLocked");};
-				};
-			};
-			
-			// Limit first aid kits.
-			if (!isMedic) then
-			{
-				_FAKCount = {toLower _x == "firstaidkit"} count (items player);
-				_maxFAKCount = 0;
-				if (sidePlayer == attackerSide) then
-				{
-					_maxFAKCount = 1;
-				};
-				if (_fakCount > _maxFAKCount) then
-				{
-					for "_i" from 0 to (_fakCount - _maxFAKCount - 1) do
-					{
-						player removeItem "FirstAidKit";
-					};
-					if (sidePlayer == attackerSide) then
-					{
-						[] spawn {hintC (localize "STR_OnlyMedicsOneFAK");};
-					}
-					else
-					{
-						[] spawn {hintC (localize "STR_OnlyMedicsFAK");};
-					};
-				};
-			};
 		};
 		
 		sleep .01;
