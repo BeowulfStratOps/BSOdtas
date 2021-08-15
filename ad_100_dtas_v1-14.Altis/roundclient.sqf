@@ -64,7 +64,7 @@ if (sidePlayer == EAST) then
 	_yOffset = (getPos player select 1) - (markerPos "respawn_east" select 1);
 };
 
-fnc_respawn =
+fnc_respawn = // wait for player to respawn, assign gear
 {
 	private ["_bGiveWeapons"];
 	_bGiveWeapons = _this select 0;
@@ -336,10 +336,22 @@ if (roundInProgress) then
 	};
 };
 
+// hud hotfix
+[] spawn {
+    while {true} do {
+        sleep 5;
+        if (isNull uiNamespace getVariable ["DTASHUD", displayNull]) then {
+            [] execVM "hud_create.sqf";
+        };
+    };
+};
+
+// THIS IS THE MAIN ROUND HANDLER. anything before this was setupTime
+// mission lifecycle (assumed): get out of spectator, start in box, select loadouts etc. etc., play, die -> spectate, wait for round to be done
 while {true} do
 {
 	[false] call bso_dtas_fnc_spectate;
-	
+
 	player setVariable ["isPlaying", false];
 	player setVariable ["ready", true, true];
 	
