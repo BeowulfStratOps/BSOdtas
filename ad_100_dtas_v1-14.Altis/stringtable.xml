@@ -88,13 +88,6 @@
 		<Key ID="STR_Spectating1">
 			<English>Spectating is possible for all dead players and players who join while a round is in progress.</English>
 		</Key>
-		<Key ID="STR_Spectating2">
-			<English>Switch between player cameras using the forward and backward keys (Default 'w' and 's').</English>
-		</Key>
-		<Key ID="STR_Spectating3">
-			<English> You can press the lean keys (default 'q' or 'e') to exit the spectator script and change your weapon loadout.</English>
-			<Russian></Russian>
-		</Key>
 		<Key ID="STR_Spectating4">
 			<English>Use the action menu on the yellow cinderblocks in order to resume spectating.</English>
 			<Russian></Russian>

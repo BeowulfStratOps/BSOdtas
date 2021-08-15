@@ -1,1 +1,0 @@
-[] call fnc_nextSpectateUnit;

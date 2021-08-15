@@ -9,39 +9,34 @@ disableSerialization;
 _ui = uiNamespace getVariable "DTASHUD";
 
 (_ui displayCtrl 1001) ctrlSetText _timeText;
-if (isSpectating) then
+
+_cap = round (capPercentage * 100);
+if (_cap > 100) then
 {
-	_missionText = name spectateUnit;
-}
-else
-{
-	_cap = round (capPercentage * 100);
-	if (_cap > 100) then
-	{
-		_cap = 100;
-	};
-	_missionText = format [localize "STR_Attacking", _cap, "%"];
-	if (_isCapturing) then
-	{
-		_missionText = format [localize "STR_Capturing", _cap, "%"];
-	};
-	if (sidePlayer != attackerSide) then
-	{
-		_missionText = localize "STR_Defending";
-		if (_isCapturing) then
-		{
-			_missionText = localize "STR_Holding";
-		};
-	};
-	if (!roundInProgress) then
-	{
-		_missionText = localize "STR_Planning";
-	};
-	if (roundInProgress && (!isPlaying)) then
-	{
-		_missionText = localize "STR_Waiting";
-	};
+    _cap = 100;
 };
+_missionText = format [localize "STR_Attacking", _cap, "%"];
+if (_isCapturing) then
+{
+    _missionText = format [localize "STR_Capturing", _cap, "%"];
+};
+if (sidePlayer != attackerSide) then
+{
+    _missionText = localize "STR_Defending";
+    if (_isCapturing) then
+    {
+        _missionText = localize "STR_Holding";
+    };
+};
+if (!roundInProgress) then
+{
+    _missionText = localize "STR_Planning";
+};
+if (roundInProgress && (!isPlaying)) then
+{
+    _missionText = localize "STR_Waiting";
+};
+
 (_ui displayCtrl 1002) ctrlSetText _missionText;
 
 (_ui displayCtrl 1101) ctrlSetText str scoreW;
