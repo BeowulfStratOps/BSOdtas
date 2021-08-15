@@ -328,6 +328,7 @@ if (defenderFaction == 1) then
 	_defenderMGAttachments = _defenderAttachments;
 	_defenderSpecOpsPrimary = _defenderPrimary;
 	_defenderSpecOpsAttachments = _defenderAttachments + ["hlc_optic_kobra"];
+	_defenderSpecOpsMagazines = _defenderWeakMagazine;
 	
 	_defenderMarksmanPrimary = _defenderPrimary;
 	_defenderMarksmanSight = "HLC_Optic_PSO1";
@@ -375,18 +376,25 @@ if (defenderFaction == 0 || defenderFaction == 2) then
 		_defenderGLMagazines = _defenderGLMagazines + [["rhs_VG40OP_white", 5]];
 	};
 	
-	_defenderSpecOpsPrimary = "rhs_weap_ak104";
-	_defenderSpecOpsAttachments = ["rhs_acc_ekp1"];
+	_defenderSpecOpsPrimary = "rhs_weap_aks74un";
+	_defenderSpecOpsAttachments = ["rhs_acc_ekp1c"];
+	_defenderSpecOpsMagazines = "rhs_30Rnd_545x39_7N10_AK";
 	
 	if (defenderGearQuality > 0) then
 	{
-		_defenderSpecOpsAttachments = _defenderSpecOpsAttachments + ["rhs_acc_pbs1"];
+		_defenderSpecOpsAttachments = _defenderSpecOpsAttachments + ["rhs_acc_pbs4"];
+		_defenderSpecOpsMagazines = "rhs_30Rnd_545x39_7U1_AK";
 	};
 	
-	_defenderMarksmanPrimary = "hlc_rifle_FN3011_WDL";
-	_defenderMarksmanSight = "hlc_optic_zf95_3011";
-	_defenderMarksmanNVSight = "hlc_optic_fnstanag4x";
-	_defenderMarksmanMagazine = "sp_fwa_10Rnd_762_FAL_Metric_Tracer";
+	_defenderMarksmanPrimary = "sp_fwa_mas_49_56";
+	_defenderMarksmanSight = "sp_fwa_acc_mas_scope";
+	_defenderMarksmanNVSight = "sp_fwa_acc_mas_scope";
+	_defenderMarksmanMagazine = "sp_fwa_10rnd_75_mas49_tracer";
+	
+	_defenderSMG = "sp_fwa_smg_mat49";
+	_defenderSMGAttachments = [];
+	_defenderSMGMagazine = "sp_fwa_32Rnd_9x19_MAT49";
+	
 	_defenderMarksmanAttachments = _defenderAttachments + [_defenderMarksmanSight];
 	if (nightVision > 0) then
 	{
