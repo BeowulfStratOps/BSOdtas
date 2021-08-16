@@ -1,5 +1,5 @@
-/*[
-  ["Credits","Keithen<br/>
+[
+  ["Credits","Keithen and Walker<br/>
 The members of Beowulf<br/>
 <br/>
 <br/>
@@ -8,8 +8,7 @@ The members of Beowulf<br/>
 <br/>
 <br/>
 <br/>
-Based on Gungame by ED.<br/>
-Also technically based on Killfeed by GF, except I rewrote like 90% of it."]
+Based on DTAS by ArmA Isreal, Gal Zohar<br/>"]
 
 ] call FHQ_fnc_ttAddBriefing;
-*/
+
