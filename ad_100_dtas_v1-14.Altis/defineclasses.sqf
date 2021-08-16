@@ -391,9 +391,9 @@ if (defenderFaction == 0 || defenderFaction == 2) then
 	_defenderMarksmanNVSight = "sp_fwa_acc_mas_scope";
 	_defenderMarksmanMagazine = "sp_fwa_10rnd_75_mas49_tracer";
 	
-	_defenderSMG = "sp_fwa_smg_mat49";
+	_defenderSMG = "sp_fwa_smg_mk5sterling";
 	_defenderSMGAttachments = [];
-	_defenderSMGMagazine = "sp_fwa_32Rnd_9x19_MAT49";
+	_defenderSMGMagazine = "sp_fwa_32Rnd_9x19_L2A3_Sterling";
 	
 	_defenderMarksmanAttachments = _defenderAttachments + [_defenderMarksmanSight];
 	if (nightVision > 0) then
@@ -928,20 +928,36 @@ if (defenderGearQuality > 0) then
 {
 
 	dClasses =
-/*		[
+		[
 			[
-				localize "STR_Marksman"
-				,_defenderUniform
+				localize "STR_Sniper"
+				,"U_I_GhillieSuit"
 				,_defenderSmallVest
 				,_defenderBackpack
 				, _defenderHelm
 				,_defenderGlasses
-				,[_defenderMarksmanPrimary, _defenderHandgun]
-				,[[_defenderMarksmanMagazine, 6], [_defenderHandgunMagazine,4], [_defenderSmoke, 2]]
-				,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1],[_defenderMarksmanSight, if (_defenderMarksmanSight in _defenderMarksmanAttachments) then {0} else {1}]]
-				,_defenderMarksmanAttachments
+				,["rhs_weap_t5000", _defenderHandgun]
+				,[["rhs_5Rnd_338lapua_t5000", 6], [_defenderHandgunMagazine,4], [_defenderSmoke, 2]]
+				,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1],["rhs_acc_dh520x56", if ("rhs_acc_dh520x56" in _defenderMarksmanAttachments) then {0} else {1}]]
+				,["rhs_acc_dh520x56"]
+				,[]
+				,["muzzle_snds_l"]
+				,{}
+				,"true"
+			]
+			,[
+				localize "STR_Spotter"
+				,"U_I_GhillieSuit"
+				,_defenderSmallVest
+				,_defenderBackpack
+				, _defenderHelm
+				,_defenderGlasses
+				,[_defenderWeakPrimary,"Rangefinder", _defenderHandgun]
+				,[[_defenderWeakMagazine, 6], [_defenderHandgunMagazine,4], [_defenderSmoke, 2]]
+				,_ACEMedicalSet + [["ACE_RangeCard",1],["ACE_Kestrel4500",1]]
 				,[]
 				,[]
+				,["muzzle_snds_l"]
 				,{}
 				,"true"
 			]
@@ -949,7 +965,7 @@ if (defenderGearQuality > 0) then
 		+
 	
 		dClasses
-		+*/
+		+
 		[
 			[
 				localize "STR_MortarGunner"
