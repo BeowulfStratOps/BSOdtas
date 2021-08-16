@@ -510,7 +510,7 @@ aClasses =
 		,{isMedic = true;}
 		,"true"
 	]
-	
+/*	Removed as people spam it... Could be fixed with reduced grenades
 	,[
 		localize "STR_Grenadier"
 		,_attackerUniform
@@ -527,7 +527,7 @@ aClasses =
 		,{}
 		,"true"
 	]
-	
+*/	
 	,[
 		localize "STR_AutomaticRifleman"
 		,_attackerUniform
@@ -818,7 +818,7 @@ dClasses =
 		,{}
 		,"true"
 	]
-	
+/*	Removed as people spawm it...	Could be fixed with reduced grenades
 	,[
 		localize "STR_Grenadier"
 		,_defenderUniform
@@ -835,7 +835,7 @@ dClasses =
 		,{}
 		,"true"
 	]
-		
+*/		
 	,[
 		localize "STR_RPG"
 		,_defenderUniform
