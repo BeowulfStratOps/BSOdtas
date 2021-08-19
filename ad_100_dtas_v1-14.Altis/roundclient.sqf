@@ -340,7 +340,7 @@ if (roundInProgress) then
 [] spawn {
     while {true} do {
         sleep 5;
-        if (isNull uiNamespace getVariable ["DTASHUD", displayNull]) then {
+        if (isNull (uiNamespace getVariable ["DTASHUD", displayNull])) then {
             [] execVM "hud_create.sqf";
         };
     };
