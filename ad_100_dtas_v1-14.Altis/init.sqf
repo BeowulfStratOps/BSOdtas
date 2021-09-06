@@ -155,5 +155,5 @@ if (!isDedicated) then
 	execVM "roundclient.sqf";
 };
 
-
-[false, true] call acre_api_fnc_setupMission;
+// beowulf edit stuff goes in here
+execVM "mission\briefing.sqf";

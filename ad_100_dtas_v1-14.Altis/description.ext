@@ -7,12 +7,6 @@ respawndelay = 1;
 
 enableDebugConsole = 1;
 
-class Header
-{
-	gameType = Seize;
-	minPlayers = 4;
-	maxPlayers = 100;
-};
 
 class RscTitles
 {
@@ -76,28 +70,6 @@ class CfgNotifications
 	};
 };
 
-class CfgDebriefing
-{  
-	class End1
-	{
-		title = $STR_YourTeamWon;
-		//subtitle = "";
-		description = $STR_TryWinAgain;
-		//backgroundPicture = "";
-		//picture = "b_inf";
-		//pictureColor[] = {0.0,0.3,0.6,1};
-	};
-	
-	class End2
-	{
-		title = $STR_YourTeamLost;
-		//subtitle = "";
-		description = $STR_TryWinNext;
-		//backgroundPicture = "";
-		//picture = "b_inf";
-		//pictureColor[] = {0.0,0.3,0.6,1};
-	};
-};
 
 class params
 {
@@ -249,11 +221,13 @@ class params
 
 respawnDialog = false;
 author = $STR_GalZohar;
-onLoadName = $STR_DTAS;
-overviewText = $STR_BriefingDescription;
-onLoadMission = $STR_BriefingDescription;
+//onLoadName = $STR_DTAS;
+//overviewText = $STR_BriefingDescription;
+//onLoadMission = $STR_BriefingDescription;
 loadScreen = "images\dtaslogo.jpg";
 overviewPicture = "images\dtaslogo.jpg";
 onLoadIntroTime = 0;
 
 joinUnassigned = 0;
+
+#include "mission\meta.cpp" // beowulf stuff added here
